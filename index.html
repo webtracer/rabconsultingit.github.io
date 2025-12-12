@@ -5,53 +5,118 @@
     <title>RAB Consulting | Small Business IT Support</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Practical IT solutions for small businesses and nonprofits. Windows servers, automation, and reliable infrastructure without enterprise overhead.">
+
+    <!-- Favicons -->
+    <link rel="icon" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+
     <style>
+        :root {
+            --accent: #d4a017;
+            --text: #1f2937;
+            --heading: #111827;
+            --muted: #6b7280;
+            --bg: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
             max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
             line-height: 1.6;
-            color: #1f2937;
-            background-color: #ffffff;
+            color: var(--text);
+            background-color: var(--bg);
         }
-        h1, h2 {
-            color: #111827;
-        }
-        h1 {
-            font-size: 2.2rem;
-        }
+
+        h1, h2 { color: var(--heading); }
+        h1 { font-size: 2.2rem; margin: 0; }
+
         h2 {
             margin-top: 2.5rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 4px;
         }
+
         a {
-            color: #2563eb;
+            color: var(--accent);
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
+        a:hover { text-decoration: underline; }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
         }
+
+        header img {
+            height: 60px;
+            width: auto;
+        }
+
+        .tagline {
+            margin: 4px 0 0;
+            font-weight: 600;
+        }
+
+        .credential {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 12px;
+        }
+
+        .credential img {
+            width: 120px;
+            height: auto;
+        }
+
         footer {
             margin-top: 4rem;
             font-size: 0.9rem;
-            color: #6b7280;
+            color: var(--muted);
+        }
+
+        /* Mobile friendliness */
+        @media (max-width: 520px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header img {
+                height: 54px;
+            }
+            .credential {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<h1>RAB Consulting</h1>
-<p><strong>Practical IT solutions for small businesses and nonprofits</strong></p>
+<header>
+    <img src="images/RAB_Consulting_Logo.png" alt="RAB Consulting logo">
+    <div>
+        <h1>RAB Consulting</h1>
+        <p class="tagline">Practical IT solutions for small businesses and nonprofits</p>
+    </div>
+</header>
 
 <h2>What I Do</h2>
 <p>
-RAB Consulting helps small organizations keep their technology reliable, secure, and easy to manage
-without the cost of a full-time IT staff.
+    RAB Consulting helps small organizations keep their technology reliable, secure, and easy to manage
+    without the cost of a full-time IT staff.
 </p>
-
 <p>
-I focus on solving real problems: unstable systems, manual processes, unclear infrastructure,
-and long-standing technical pain points.
+    I focus on solving real problems: unstable systems, manual processes, unclear infrastructure,
+    and long-standing technical pain points.
 </p>
 
 <h2>Who I Work With</h2>
@@ -61,6 +126,16 @@ and long-standing technical pain points.
     <li>Schools and community organizations</li>
     <li>Teams without dedicated IT staff</li>
 </ul>
+
+<h2>Professional Credentials</h2>
+<div class="credential">
+    <img src="images/smaller_microcredential.png" alt="Oregon State University Programming Fundamentals MicroCredential">
+    <p>
+        <strong>Programming Fundamentals MicroCredential</strong><br>
+        Oregon State University<br>
+        Focus on core programming concepts and problem-solving fundamentals.
+    </p>
+</div>
 
 <h2>Services</h2>
 <ul>
@@ -74,19 +149,21 @@ and long-standing technical pain points.
 
 <h2>Experience</h2>
 <p>
-RAB Consulting currently supports a nonprofit organization with day-to-day IT operations,
-system automation, and infrastructure stability.
+    RAB Consulting currently supports a nonprofit organization with day-to-day IT operations,
+    system automation, and infrastructure stability.
 </p>
-
 <p>
-References available upon request.
+    References available upon request.
 </p>
 
 <h2>Let’s Talk</h2>
 <p>
-<strong>Email:</strong> <a href="mailto:Randy.Bitts@icloud.com">Randy.Bitts@icloud.com</a><br>
-<strong>Location:</strong> Graham, WA<br>
-<strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/randybitts/" target="_blank">linkedin.com/in/randybitts</a>
+    <strong>Email:</strong> <a href="mailto:Randy.Bitts@icloud.com">Randy.Bitts@icloud.com</a><br>
+    <strong>Location:</strong> Graham, WA<br>
+    <strong>LinkedIn:</strong>
+    <a href="https://www.linkedin.com/in/randybitts/" target="_blank" rel="noopener noreferrer">
+        linkedin.com/in/randybitts
+    </a>
 </p>
 
 <footer>
