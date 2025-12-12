@@ -92,21 +92,17 @@
             border: 1px solid var(--accent);
             background: #fff;
             font-weight: 600;
-        }
-        
-        .button:hover {
-            text-decoration: none;
-            filter: brightness(0.98);
+            cursor: pointer;
         }
 
         .button.primary {
-            border-color: var(--accent);
             background: var(--accent);
             color: #111827;
         }
-        .button.primary:hover {
+
+        .button:hover {
             text-decoration: none;
-            filter: brightness(0.95);
+            filter: brightness(0.97);
         }
 
         .card {
@@ -139,7 +135,6 @@
             margin-top: 8px;
         }
 
-        /* Honeypot field should be hidden */
         .hp-field {
             position: absolute;
             left: -5000px;
@@ -234,8 +229,7 @@
 </div>
 
 <div class="card">
-    <form action="https://formspree.io/f/xqarwlll" method="POST">
-        <!-- Honeypot (spam trap) -->
+    <form id="contactForm" action="https://formspree.io/f/xqarwlll" method="POST">
         <div class="hp-field" aria-hidden="true">
             <label>Leave this field empty</label>
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
@@ -253,9 +247,7 @@
         <label for="message">How can I help?</label>
         <textarea id="message" name="message" required></textarea>
 
-        <!-- Optional subject line for your inbox -->
         <input type="hidden" name="_subject" value="New message from RABConsultingIT.com">
-        <input type="hidden" name="_redirect" value="https://rabconsultingit.com/">
 
         <div class="cta-row" style="margin-top:14px;">
             <button class="button primary" type="submit">Send message</button>
@@ -274,6 +266,35 @@
 <footer>
     RAB Consulting • Small business IT done right
 </footer>
+
+<script>
+(function () {
+    const form = document.getElementById("contactForm");
+    if (!form) return;
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok) {
+                window.location.href = "https://rabconsultingit.com/";
+            } else {
+                alert("Sorry, something went wrong. Please try again or email me directly.");
+            }
+        } catch (error) {
+            alert("Network error. Please try again or email me directly.");
+        }
+    });
+})();
+</script>
 
 </body>
 </html>
