@@ -96,6 +96,12 @@
 
         .button.primary {
             border-color: var(--accent);
+            background: var(--accent);
+            color: #111827;
+        }
+        .button.primary:hover {
+            text-decoration: none;
+            filter: brightness(0.95);
         }
 
         .card {
@@ -244,6 +250,7 @@
 
         <!-- Optional subject line for your inbox -->
         <input type="hidden" name="_subject" value="New message from RABConsultingIT.com">
+        <input type="hidden" name="_redirect" value="https://rabconsultingit.com/">
 
         <div class="cta-row" style="margin-top:14px;">
             <button class="button primary" type="submit">Send message</button>
