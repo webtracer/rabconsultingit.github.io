@@ -18,6 +18,7 @@
             --heading: #111827;
             --muted: #6b7280;
             --bg: #ffffff;
+            --border: #e5e7eb;
         }
 
         * { box-sizing: border-box; }
@@ -76,21 +77,75 @@
             height: auto;
         }
 
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+            margin-bottom: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: #fff;
+            font-weight: 600;
+        }
+
+        .button.primary {
+            border-color: var(--accent);
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+
+        form label {
+            display: block;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font: inherit;
+            margin-top: 6px;
+        }
+
+        textarea { min-height: 120px; resize: vertical; }
+
+        .muted {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        /* Honeypot field should be hidden */
+        .hp-field {
+            position: absolute;
+            left: -5000px;
+        }
+
         footer {
             margin-top: 4rem;
             font-size: 0.9rem;
             color: var(--muted);
         }
 
-        /* Mobile friendliness */
         @media (max-width: 520px) {
             header {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            header img {
-                height: 54px;
-            }
+            header img { height: 54px; }
             .credential {
                 flex-direction: column;
                 align-items: flex-start;
@@ -157,14 +212,52 @@
 </p>
 
 <h2>Let’s Talk</h2>
-<p>
-    <strong>Email:</strong> <a href="mailto:Randy.Bitts@icloud.com">Randy.Bitts@icloud.com</a><br>
-    <strong>Location:</strong> Graham, WA<br>
-    <strong>LinkedIn:</strong>
-    <a href="https://www.linkedin.com/in/randybitts/" target="_blank" rel="noopener noreferrer">
-        linkedin.com/in/randybitts
+
+<div class="cta-row">
+    <a class="button primary" href="https://calendly.com/rab_consulting/30min" target="_blank" rel="noopener noreferrer">
+        Book a 15-minute call
     </a>
-</p>
+    <a class="button" href="mailto:Randy.Bitts@icloud.com">
+        Email me directly
+    </a>
+</div>
+
+<div class="card">
+    <form action="https://formspree.io/f/xqarwlll" method="POST">
+        <!-- Honeypot (spam trap) -->
+        <div class="hp-field" aria-hidden="true">
+            <label>Leave this field empty</label>
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="org">Organization (optional)</label>
+        <input id="org" name="organization" type="text">
+
+        <label for="message">How can I help?</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <!-- Optional subject line for your inbox -->
+        <input type="hidden" name="_subject" value="New message from RABConsultingIT.com">
+
+        <div class="cta-row" style="margin-top:14px;">
+            <button class="button primary" type="submit">Send message</button>
+        </div>
+
+        <p class="muted">
+            Prefer email? <a href="mailto:Randy.Bitts@icloud.com">Randy.Bitts@icloud.com</a><br>
+            Location: Graham, WA • LinkedIn:
+            <a href="https://www.linkedin.com/in/randybitts/" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/randybitts
+            </a>
+        </p>
+    </form>
+</div>
 
 <footer>
     RAB Consulting • Small business IT done right
